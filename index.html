@@ -2,6 +2,13 @@
 <html>
 <head>
   <title>Leer y migrar archivos TXT a CSV</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .half-chart {
+  width: 35vw;
+  height: 35vh;
+}
+  </style>
 </head>
 <body>
   <input type="file" id="txtFiles" multiple><br>
@@ -9,7 +16,7 @@
   <table id="csvTable">
     <!-- Aquí se mostrará la tabla CSV -->
   </table>
-
+  <canvas id="chart" class="half-chart"></canvas>
   <script src="script.js"></script>
 </body>
 </html>
