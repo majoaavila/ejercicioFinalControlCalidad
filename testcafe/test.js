@@ -1,6 +1,6 @@
 const { Selector } = require('testcafe');
 
-fixture`Prueba de carga de archivos`.page`C:\Users\joseo\OneDrive\Documents\Sexto semestre\CCS\ejercicioFinalControlCalidad\index.html`;
+fixture`Prueba de carga de archivos`.page`http://127.0.0.1:5500/ejercicioFinalControlCalidad/index.html`;
 
 test('Cargar archivos y verificar tabla', async t => {
   await t
