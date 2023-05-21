@@ -1,0 +1,1 @@
+ResourceLeveragingScore 3|CollaborationScore 2|SustainabilityScore 5|EquitableAccessScore 3|SupportAndRegulation 1|PreservationCultureScore 2|CultureInnovationScore 2|NegativeImpacts 1|Infrastructure 5|GoodsAndBenefits 2
