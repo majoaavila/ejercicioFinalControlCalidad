@@ -1,0 +1,10 @@
+/* add a background color*/
+body {
+  background-color: #f1f1f1;
+  font-family: 'Poppins', sans-serif;
+}
+
+#footerFont {
+  font-size: 12px;
+  font-weight: 100;
+}
