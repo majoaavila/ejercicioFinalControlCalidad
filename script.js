@@ -1,39 +1,37 @@
-document.addEventListener('DOMContentLoaded', function(){
-  function processFiles() {
-    const filesInput = document.getElementById('txtFiles');
-    const files = filesInput.files;
-    const table = [];
-  
-    for (let i = 0; i < files.length; i++) {
-      const reader = new FileReader();
-      const file = files[i];
-  
-      reader.onload = function(event) {
-        const fileContent = event.target.result;
-        const rows = fileContent.trim().split('\n');
-  
-        for (let j = 0; j < rows.length; j++) {
-          const columns = rows[j].trim().split('|');
-          const row = {};
-  
-          for (let k = 0; k < columns.length; k++) {
-            const keyValue = columns[k].trim().split(' ');
-            const key = keyValue[0].trim();
-            const value = keyValue[1].trim();
-            row[key] = value;
-          }
-  
-          table.push(row);
+function processFiles() {
+  const filesInput = document.getElementById('txtFiles');
+  const files = filesInput.files;
+  const table = [];
+
+  for (let i = 0; i < files.length; i++) {
+    const reader = new FileReader();
+    const file = files[i];
+
+    reader.onload = function(event) {
+      const fileContent = event.target.result;
+      const rows = fileContent.trim().split('\n');
+      for (let j = 0; j < rows.length; j++) {
+        const columns = rows[j].trim().split('|');
+        const row = {};
+
+        for (let k = 0; k < columns.length; k++) {
+          const keyValue = columns[k].trim().split(' ');
+          const key = keyValue[0].trim();
+          const value = keyValue[1].trim();
+          row[key] = value;
         }
-  
-        if (i === files.length - 1) {
-          convertToCSV(table);
-        }
-      };
-  
-      reader.readAsText(file);
-    }
+
+        table.push(row);
+      }
+
+      if (i === files.length - 1) {
+        convertToCSV(table);
+      }
+    };
+
+    reader.readAsText(new Blob([file]));
   }
+}
   
   function convertToCSV(table) {
     let csvContent = '';
@@ -126,5 +124,8 @@ document.addEventListener('DOMContentLoaded', function(){
     new Chart(ctx, chartConfig);
     }
 
-    module.exports = {processFiles};
+    
+document.addEventListener("DOMContentLoaded", function (){
+  document.getElementById("processButton").addEventListener("click", processFiles);
 })
+module.exports = {processFiles};

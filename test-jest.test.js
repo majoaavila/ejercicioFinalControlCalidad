@@ -2,7 +2,7 @@ const { processFiles } = require('./script');
 
 // Mock del elemento 'txtFiles'
 document.getElementById = jest.fn(() => ({
-  files: new Array(10) // Simula 10 archivos subidos
+  files: new Array(11) // Simula 10 archivos subidos
 }));
 
 describe('Pruebas de carga de archivos', () => {
